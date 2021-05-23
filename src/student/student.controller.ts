@@ -20,8 +20,8 @@ export class StudentController {
   @Post()
   create(@Body() student: Student) {
     if (
-      student.studentId === undefined &&
-      student.fullname === undefined &&
+      student.studentId === undefined ||
+      student.fullname === undefined ||
       student.year === undefined
     ) {
       throw new HttpException('ข้อมูลไม่ถูกต้อง', HttpStatus.BAD_REQUEST);
